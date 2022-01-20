@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sample2">
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Sample">
+        <service
+            android:name=".Alarm.AlarmService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity
+            android:name=".Main.RefreshActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Alarm.AlarmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BLE.BLEActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Main.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--<receiver android:name=".Alarm.AlarmActivity$AlertReceiver" />-->
+
+        <service
+            android:name=".BLE.BluetoothLeService"
+            android:enabled="true" />
+    </application>
+
+</manifest>
