@@ -1,0 +1,10 @@
+{
+    "target_overrides": {
+        "DISCO_L475VG_IOT01A": {
+            "platform.stdio-baud-rate": 115200,
+            "platform.stdio-buffered-serial": 1,
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["CORDIO", "CORDIO_BLUENRG"]
+        }
+    }
+}
